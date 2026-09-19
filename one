@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythic Gear - RPG Management</title>
+    <style>
+        :root {
+            --primary: #ffcc00;
+            --bg: #1a1a2e;
+            --card: #16213e;
+            --text: #e94560;
+            --gold: #ffd700;
+            --diamond: #b9f2ff;
+            --spirit: #bc13fe;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Auth Section */
+        #auth-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auth-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid var(--text);
+            text-align: center;
+        }
+
+        /* Main Layout */
+        #game-ui {
+            display: none;
+            width: 95%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background: var(--card);
+            padding: 15px;
+            border-radius: 10px;
+            border-bottom: 3px solid var(--text);
+            margin-bottom: 20px;
+        }
+
+        .currency-bar span {
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .gold { color: var(--gold); }
+        .diamond { color: var(--diamond); }
+        .spirit { color: var(--spirit); }
+
+        /* Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: var(--card);
+            color: white;
+            border: 1px solid var(--text);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab-btn.active { background: var(--text); }
+
+        .panel { display: none; background: var(--card); padding: 20px; border-radius: 10px; }
+        .panel.active { display: block; }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .item-card {
+            background: #0f3460;
+            border: 1px solid #4e4e4e;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        .item-card.rare { border-color: var(--spirit); box-shadow: 0 0 10px var(--spirit); }
+
+        button {
+            cursor: pointer;
+            background: var(--text);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 
